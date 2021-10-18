@@ -1,5 +1,7 @@
+@hostname = http://localhost:3000
+
 ### Users create (signup)
-POST http://localhost:3000/users
+POST {{ hostname }}/users
 Content-Type:  application/json
 
 {
@@ -8,3 +10,13 @@ Content-Type:  application/json
   "password": "password",
   "password_confirmation": "password"
 }
+
+### Sessions create (login)
+
+POST {{hostname}}/sessions
+Content-Type: application/json
+
+  {
+    "email": "testname@gmail.com",
+    "password": "password"
+  }
