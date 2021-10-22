@@ -46,4 +46,10 @@ class UsersController < ApplicationController
              status: :uprocessable_entity
     end
   end
+
+  def delete
+    user = User.find(current_user.id)
+    user.destroy
+    render json: { message: "User successfully deleted." }
+  end
 end
