@@ -63,3 +63,13 @@ Authorization: Bearer {{jwt}}
 GET {{ hostname }}/favorites
 Content-Type: application/json
 Authorization: Bearer {{jwt}}
+
+### Favorites create
+POST {{ hostname }}/favorites
+Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
+{
+  "api_dog_id": "55320928"
+}
+
