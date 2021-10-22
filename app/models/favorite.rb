@@ -2,7 +2,7 @@ class Favorite < ApplicationRecord
   belongs_to :user
 
   def api_dog
-    HTTP.auth("Bearer #{get_token}").get("https://api.petfinder.com/v2/animals/#{dog_api_id}").parse(:json)["animal"]
+    HTTP.auth("Bearer #{get_token}").get("https://api.petfinder.com/v2/animals/#{api_dog_id}").parse(:json)["animal"]
   end
 
   def get_token

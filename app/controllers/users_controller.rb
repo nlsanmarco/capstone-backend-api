@@ -19,4 +19,31 @@ class UsersController < ApplicationController
     user = User.find(current_user.id)
     render json: user.as_json
   end
+
+  def update
+    user = User.find(current_user.id)
+    # user.email
+    # user.password
+    user.has_dogs = params[:has_dogs] || user.has_dogs
+    user.has_cats = params[:has_cats] || user.has_cats
+    user.has_children = params[:has_children] || user.has_children
+    user.lives_in_house = params[:lives_in_house] || user.lives_in_house
+    user.has_yard = params[:has_yard] || user.has_yard
+    user.previous_dog_owner = params[:previous_dog_owner] || user.previous_dog_owner
+    user.dog_training_experience = params[:dog_training_experience] || user.dog_training_experience
+    user.hours_away_per_day = params[:hours_away_per_day] || user.hours_away_per_day
+    user.preferred_breed = params[:preferred_breed] || user.preferred_breed
+    user.preferred_age = params[:preferred_age] || user.preferred_age
+    user.preferred_gender = params[:preferred_gender] || user.preferred_gender
+    user.preferred_size = params[:preferred_size] || user.preferred_size
+    user.special_needs = params[:special_needs] || user.special_needs
+    user.location = params[:location] || user.location
+    user.save
+    if user.save
+      render json: user.as_json
+    else
+      render json: user.errors.full_messages,
+             status: :uprocessable_entity
+    end
+  end
 end

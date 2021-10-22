@@ -1,10 +1,6 @@
 require "http"
 system "clear"
 
-# response = HTTP.post("http://localhost:3000/sessions", :json => { :email => "testname@gmail.com", :password => "password" })
-
-# puts response
-
 # response2 = HTTP.auth("Bearer #{response}").get("https://api.petfinder.com/v2/animals?type=Dog&location=37410")
 
 # dog_data = response2.parse(:json)
@@ -15,4 +11,4 @@ response = HTTP.post("https://api.petfinder.com/v2/oauth2/token", :json => { :gr
 
 access_token = response.parse(:json)["access_token"]
 
-p 
+p
