@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_21_013253) do
+ActiveRecord::Schema.define(version: 2021_10_22_163311) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 2021_10_21_013253) do
     t.boolean "has_cats"
     t.boolean "has_children"
     t.boolean "lives_in_house"
-    t.boolean "lives_in_apartment"
     t.boolean "has_yard"
     t.boolean "previous_dog_owner"
     t.boolean "dog_training_experience"

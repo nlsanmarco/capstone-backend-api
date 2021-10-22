@@ -1,7 +1,7 @@
 require "http"
 system "clear"
 
-# response2 = HTTP.auth("Bearer #{response}").get("https://api.petfinder.com/v2/animals?type=Dog&location=37410")
+response2 = HTTP.auth("Bearer #{get_token}").get("https://api.petfinder.com/v2/animals?type=Dog&location=37410")
 
 # dog_data = response2.parse(:json)
 
