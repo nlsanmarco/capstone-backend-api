@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 
   def update
     user = User.find(current_user.id)
-    # user.email
+    user.email = params[:email] || user.email
     # user.password
     user.has_dogs = params[:has_dogs] || user.has_dogs
     user.has_cats = params[:has_cats] || user.has_cats

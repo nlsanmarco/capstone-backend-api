@@ -1,6 +1,6 @@
 @hostname = http://localhost:3000
 
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzQ5NTE5NDd9.wx1xhR7RnY2V7fq-fR9qN-3fNz387M-iI6CuPnMW6Xc
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzQ5NTIxNDV9.WlLywirQRZNQhmhGxhw0mk-ZRoDvRQCDjTdPWDnojB8
 
 ### Users create (signup)
 POST {{ hostname }}/users
@@ -19,7 +19,7 @@ POST {{hostname}}/sessions
 Content-Type: application/json
 
   {
-    "email": "testname@gmail.com",
+    "email": "minnie@gmail.com",
     "password": "password"
   }
 
@@ -35,6 +35,7 @@ Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
 {
+  "email": "minnie@gmail.com",
   "has_dogs": "true",
   "has_cats": "true",
   "has_children": "false",
@@ -53,6 +54,12 @@ Authorization: Bearer {{jwt}}
 
 ### User destroy
 
-DELETE {{hostname}}/users/:id
+DELETE {{ hostname }}/users/:id
+Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
+### Favorites index
+
+GET {{ hostname }}/favorites
 Content-Type: application/json
 Authorization: Bearer {{jwt}}
