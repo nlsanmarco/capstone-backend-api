@@ -73,3 +73,7 @@ Authorization: Bearer {{jwt}}
   "api_dog_id": "55320928"
 }
 
+### Favorites delete
+DELETE {{ hostname }}/favorites/22
+Content-Type: application/json
+Authorization: Bearer {{jwt}}

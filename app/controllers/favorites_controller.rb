@@ -19,4 +19,10 @@ class FavoritesController < ApplicationController
              status: :unprocessable_entity
     end
   end
+
+  def delete
+    favorite = Favorite.find_by(id: params[:id])
+    favorite.destroy
+    render json: { message: "Favorite successfully deleted." }
+  end
 end
