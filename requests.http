@@ -1,7 +1,6 @@
 @hostname = http://localhost:3000
 
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJleHAiOjE2MzUwMDc4NDd9.a_iGeY4nhzDo0Utvq2ecd0EQ05uqM_d1k6TjRT-jQ6o
-
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUwMTAyNzR9.MarnEd0uu_V6BvXDYs9AnuXyVZaVz1h-nnqGVLdOhxk
 ### Users create (signup)
 POST {{ hostname }}/users
 Content-Type:  application/json
@@ -19,7 +18,7 @@ POST {{hostname}}/sessions
 Content-Type: application/json
 
   {
-    "email": "testname@gmail.com",
+    "email": "minnie@gmail.com",
     "password": "password"
   }
 
