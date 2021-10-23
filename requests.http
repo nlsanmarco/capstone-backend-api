@@ -1,6 +1,6 @@
 @hostname = http://localhost:3000
 
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUwMTAyNzR9.MarnEd0uu_V6BvXDYs9AnuXyVZaVz1h-nnqGVLdOhxk
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUwMzU3OTV9.CQRNblYviEpA1nX9klvt6GMuxuoPIpaN-gupQsf3ZpA
 ### Users create (signup)
 POST {{ hostname }}/users
 Content-Type:  application/json
@@ -73,6 +73,6 @@ Authorization: Bearer {{jwt}}
 }
 
 ### Favorites delete
-DELETE {{ hostname }}/favorites/1
+DELETE {{ hostname }}/favorites/25
 Content-Type: application/json
 Authorization: Bearer {{jwt}}
