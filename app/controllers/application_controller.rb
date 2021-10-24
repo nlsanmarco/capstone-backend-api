@@ -79,7 +79,13 @@ class ApplicationController < ActionController::API
       age = ""
     end
 
-    query = "https://api.petfinder.com/v2/animals?type=Dog" + good_with_dogs + good_with_cats + good_with_children + size + age + "&location=#{current_user.location}"
+    if current_user.lives_in_house == false || current_user.hours_away_per_day > 8 && current_user.dog_training_experience == false
+      house_trained = "&house_trained=true"
+    else
+      house_trained = ""
+    end
+
+    query = "https://api.petfinder.com/v2/animals?type=Dog" + good_with_dogs + good_with_cats + good_with_children + size + age + house_trained + "&location=#{current_user.location}"
 
     return query
   end
