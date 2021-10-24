@@ -51,6 +51,19 @@ class ApplicationController < ActionController::API
       good_with_children = ""
     end
 
+    #size
+    if current_user.lives_in_house == false && current_user.preferred_size == null
+      size = "&size=small"
+    elsif current_user.preferred_size == "small"
+      size = "&size=small"
+    elsif current_user.preferred_size == "medium"
+      size = "&size=medium"
+    elsif current_user.preferred_size == "large"
+      size = "&size=large"
+    else
+      size = ""
+    end
+
     query = "https://api.petfinder.com/v2/animals?type=Dog" + good_with_dogs + good_with_cats + good_with_children + "&location=#{current_user.location}"
 
     return query
