@@ -1,6 +1,6 @@
 @hostname = http://localhost:3000
 
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUxMjEzMjR9.Ec2sJil8yrZYjGp6Rl1PiQoYV-2HHqDuT-8OHiZsWpI
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUyMDIyOTF9.f-KZ0OTVriNuH-DilV1PHr97N4V7NR_S_Lm3r58KIps
 ### Users create (signup)
 POST {{ hostname }}/users
 Content-Type:  application/json
@@ -38,17 +38,16 @@ Authorization: Bearer {{jwt}}
   "has_dogs": "true",
   "has_cats": "true",
   "has_children": "false",
-  "lives_in_house": "true",
-  "has_yard": "true",
+  "lives_in_house": "false",
+  "has_yard": "false",
   "previous_dog_owner": "true",
-  "dog_training_experience": "true",
-  "hours_away_per_day": 8,
+  "dog_training_experience": "false",
+  "hours_away_per_day": 10,
   "preferred_breed": "Shetland Sheepdog",
   "preferred_age": "baby",
   "preferred_gender": "female",
-  "preferred_size": "small",
-  "special_needs": "true",
-  "location": "37343"
+  "preferred_size": "",
+  "special_needs": ""
 }
 
 ### User destroy

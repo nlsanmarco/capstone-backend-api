@@ -51,8 +51,8 @@ class ApplicationController < ActionController::API
       good_with_children = ""
     end
 
-    if current_user.lives_in_house == false && current_user.preferred_size == null
-      size = "&size=small, medium"
+    if current_user.lives_in_house == false && current_user.preferred_size == ""
+      size = "&size=small,medium"
     elsif current_user.preferred_size == "small"
       size = "&size=small"
     elsif current_user.preferred_size == "medium"
@@ -65,7 +65,7 @@ class ApplicationController < ActionController::API
       size = ""
     end
 
-    if current_user.has_yard == false || current_user.hours_away > 8 && current_user.preferred_age == null
+    if current_user.has_yard == false || current_user.hours_away_per_day > 8 && current_user.preferred_age == ""
       age = "&age=adult,senior"
     elsif current_user.preferred_age == "baby"
       age = "&age=baby"

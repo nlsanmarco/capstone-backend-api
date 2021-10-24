@@ -4,6 +4,6 @@ class ApiDogController < ApplicationController
   def index
     api_dogs = HTTP.auth("Bearer #{get_token}").get("#{query}").parse(:json)
 
-    render json: api_dogs
+    render json: query
   end
 end
