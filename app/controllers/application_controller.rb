@@ -93,7 +93,13 @@ class ApplicationController < ActionController::API
       gender = ""
     end
 
-    query = "https://api.petfinder.com/v2/animals?type=Dog" + good_with_dogs + good_with_cats + good_with_children + size + age + house_trained + gender + "&location=#{current_user.location}"
+    if current_user.special_needs == true
+      special_needs = "&special_needs=true"
+    else
+      special_needs = ""
+    end
+
+    query = "https://api.petfinder.com/v2/animals?type=Dog" + good_with_dogs + good_with_cats + good_with_children + size + age + house_trained + gender + special_needs + "&location=#{current_user.location}"
 
     return query
   end
