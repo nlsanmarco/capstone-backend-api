@@ -14,8 +14,7 @@ class FavoritesController < ApplicationController
     if favorite.save
       render json: favorite
     else
-      render json: favorite.errors.full_messages,
-             status: :unprocessable_entity
+      render json: favorite.errors.full_messages, status: :unprocessable_entity
     end
   end
 

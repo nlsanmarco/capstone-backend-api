@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   delete "/favorites/:id" => "favorites#delete"
 
   get "/breeds" => "breeds#index"
+
+  get "/api_dog" => "api_dog#index"
 end

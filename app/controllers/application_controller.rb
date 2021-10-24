@@ -31,4 +31,28 @@ class ApplicationController < ActionController::API
       render json: {}, status: :unauthorized
     end
   end
+
+  def query
+    if current_user.has_dogs == true
+      good_with_dogs = "&good_with_dogs=true"
+    else
+      good_with_dogs = ""
+    end
+
+    if current_user.has_cats == true
+      good_with_cats = "&good_with_cats=true"
+    else
+      good_with_cats = ""
+    end
+
+    if current_user.has_children == true
+      good_with_children = "&good_with_children=true"
+    else
+      good_with_children = ""
+    end
+
+    query = "https://api.petfinder.com/v2/animals?type=Dog" + good_with_dogs + good_with_cats + good_with_children + "&location=#{current_user.location}"
+
+    return query
+  end
 end

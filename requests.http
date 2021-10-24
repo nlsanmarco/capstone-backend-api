@@ -1,6 +1,6 @@
 @hostname = http://localhost:3000
 
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUwMzU3OTV9.CQRNblYviEpA1nX9klvt6GMuxuoPIpaN-gupQsf3ZpA
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUxMjEzMjR9.Ec2sJil8yrZYjGp6Rl1PiQoYV-2HHqDuT-8OHiZsWpI
 ### Users create (signup)
 POST {{ hostname }}/users
 Content-Type:  application/json
@@ -80,3 +80,9 @@ Authorization: Bearer {{jwt}}
 ### Breeds index
 GET {{ hostname }}/breeds
 Content-Type: application/json
+
+### API Dog Index
+
+GET {{ hostname }}/api_dog
+Content-Type: application/json
+Authorization: Bearer {{jwt}}
