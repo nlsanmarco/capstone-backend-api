@@ -65,7 +65,7 @@ class ApplicationController < ActionController::API
       size = ""
     end
 
-    if current_user.has_yard == false || current_user.hours_away_per_day > 8 && current_user.preferred_age == ""
+    if current_user.has_yard == false && current_user.preferred_age == "" || current_user.hours_away_per_day > 8 && current_user.preferred_age == ""
       age = "&age=adult,senior"
     elsif current_user.preferred_age == "baby"
       age = "&age=baby"
@@ -79,7 +79,7 @@ class ApplicationController < ActionController::API
       age = ""
     end
 
-    if current_user.lives_in_house == false || current_user.hours_away_per_day > 8 && current_user.dog_training_experience == false
+    if current_user.lives_in_house == false && current_user.dog_training_experience == false || current_user.hours_away_per_day > 8 && current_user.dog_training_experience == false
       house_trained = "&house_trained=true"
     else
       house_trained = ""
