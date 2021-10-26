@@ -1,6 +1,6 @@
 @hostname = http://localhost:3000
 
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUyODA0NDZ9.1nRndIrhLO6eM16mQNZ2OKi63jYzZjsxA6kKGntXklY
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUzNDYzMTV9.c_Z1lL1E-WD5wa4ystMO-IxJYJj6rXqGijP5a-U4bk4
 
 ### Users create (signup)
 POST {{ hostname }}/users
@@ -61,7 +61,7 @@ Authorization: Bearer {{jwt}}
 }
 
 ### Favorites delete
-DELETE {{ hostname }}/favorites/25
+DELETE {{ hostname }}/favorites/2
 Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
@@ -71,6 +71,6 @@ Content-Type: application/json
 
 ### API Dog Index
 
-GET {{ hostname }}/api_dog
+GET {{ hostname }}/api_dogs
 Content-Type: application/json
 Authorization: Bearer {{jwt}}
