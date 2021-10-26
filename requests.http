@@ -70,7 +70,11 @@ GET {{ hostname }}/breeds
 Content-Type: application/json
 
 ### API Dog Index
-
 GET {{ hostname }}/api_dogs
+Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
+### API Dog Show
+GET {{ hostname }}/api_dogs/53380509
 Content-Type: application/json
 Authorization: Bearer {{jwt}}

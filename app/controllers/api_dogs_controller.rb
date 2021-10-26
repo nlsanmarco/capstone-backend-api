@@ -6,4 +6,10 @@ class ApiDogsController < ApplicationController
 
     render json: api_dogs
   end
+
+  def show
+    api_dog = HTTP.auth("Bearer #{get_token}").get("https://api.petfinder.com/v2/animals/#{params[:api_dog_id]}").parse(:json)["animal"]
+
+    render json: api_dog
+  end
 end
