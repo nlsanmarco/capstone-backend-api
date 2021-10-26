@@ -1,4 +1,4 @@
-class ApiDogController < ApplicationController
+class ApiDogsController < ApplicationController
   before_action :authenticate_user
 
   def index
