@@ -9,19 +9,19 @@ class UsersController < ApplicationController
       password_confirmation: params[:password_confirmation],
     )
     if user.save
-      render json: { message: "User created successfully" }, status: :created
+      render json: user, status: :created
     else
       render json: { errors: user.errors.full_messages }, status: :bad_request
     end
   end
 
   def show
-    user = User.find(current_user.id)
-    render json: user.as_json
+    user = current_user
+    render json: user
   end
 
   def update
-    user = User.find(current_user.id)
+    user = current_user
     user.email = params[:email] || user.email
     # user.password
     user.has_dogs = params[:has_dogs] || user.has_dogs
@@ -40,7 +40,7 @@ class UsersController < ApplicationController
     user.location = params[:location] || user.location
     user.save
     if user.save
-      render json: user.as_json
+      render json: user
     else
       render json: user.errors.full_messages,
              status: :uprocessable_entity
@@ -48,7 +48,7 @@ class UsersController < ApplicationController
   end
 
   def delete
-    user = User.find(current_user.id)
+    user = current_user
     user.destroy
     render json: { message: "User successfully deleted." }
   end

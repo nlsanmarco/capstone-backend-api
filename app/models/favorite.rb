@@ -2,15 +2,29 @@ class Favorite < ApplicationRecord
   belongs_to :user
 
   def api_dog
-    name = HTTP.auth("Bearer #{get_token}").get("https://api.petfinder.com/v2/animals/#{api_dog_id}").parse(:json)["animal"]["name"]
-    breed = HTTP.auth("Bearer #{get_token}").get("https://api.petfinder.com/v2/animals/#{api_dog_id}").parse(:json)["animal"]["breeds"]["primary"]
-    age = HTTP.auth("Bearer #{get_token}").get("https://api.petfinder.com/v2/animals/#{api_dog_id}").parse(:json)["animal"]["age"]
-    city = HTTP.auth("Bearer #{get_token}").get("https://api.petfinder.com/v2/animals/#{api_dog_id}").parse(:json)["animal"]["contact"]["address"]["city"]
-    state = HTTP.auth("Bearer #{get_token}").get("https://api.petfinder.com/v2/animals/#{api_dog_id}").parse(:json)["animal"]["contact"]["address"]["state"]
-    location = "#{city}, #{state}"
-    image_url = HTTP.auth("Bearer #{get_token}").get("https://api.petfinder.com/v2/animals/#{api_dog_id}").parse(:json)["animal"]["primary_photo_cropped"]["small"]
-    status = HTTP.auth("Bearer #{get_token}").get("https://api.petfinder.com/v2/animals/#{api_dog_id}").parse(:json)["animal"]["status"]
-    return { name: name, breed: breed, age: age, location: location, image_url: image_url, status: status }
+    response = HTTP.auth("Bearer #{get_token}").get("https://api.petfinder.com/v2/animals/#{api_dog_id}").parse(:json)
+
+    if response["animal"]
+      return response["animal"]
+      # return {
+      #          name: response["animal"]["name"],
+      #          breed: response["animal"]["breeds"]["primary"],
+      #          age: response["animal"]["age"],
+      #          location: "#{response["animal"]["contact"]["address"]["city"]}, #{response["animal"]["contact"]["address"]["state"]}",
+      #          image_url: response["animal"]["primary_photo_cropped"]["small"],
+      #          status: response["animal"]["status"],
+      #        }
+    end
+    Favorite.find(id).destroy
+    return nil
+    #["animal"]["name"]
+    # breed = HTTP.auth("Bearer #{get_token}").get("https://api.petfinder.com/v2/animals/#{api_dog_id}").parse(:json)["animal"]["breeds"]["primary"]
+    # age = HTTP.auth("Bearer #{get_token}").get("https://api.petfinder.com/v2/animals/#{api_dog_id}").parse(:json)["animal"]["age"]
+    # city = HTTP.auth("Bearer #{get_token}").get("https://api.petfinder.com/v2/animals/#{api_dog_id}").parse(:json)["animal"]["contact"]["address"]["city"]
+    # state = HTTP.auth("Bearer #{get_token}").get("https://api.petfinder.com/v2/animals/#{api_dog_id}").parse(:json)["animal"]["contact"]["address"]["state"]
+    # image_url = HTTP.auth("Bearer #{get_token}").get("https://api.petfinder.com/v2/animals/#{api_dog_id}").parse(:json)["animal"]["primary_photo_cropped"]["small"]
+    # status = HTTP.auth("Bearer #{get_token}").get("https://api.petfinder.com/v2/animals/#{api_dog_id}").parse(:json)["animal"]["status"]
+    # return { name: name, breed: breed, age: age, location: location, image_url: image_url, status: status }
     # HTTP.auth("Bearer #{get_token}").get("https://api.petfinder.com/v2/animals/#{api_dog_id}").parse(:json)["animal"]
   end
 

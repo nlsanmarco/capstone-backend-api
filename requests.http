@@ -1,6 +1,6 @@
 @hostname = http://localhost:3000
 
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUzNDYzMTV9.c_Z1lL1E-WD5wa4ystMO-IxJYJj6rXqGijP5a-U4bk4
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUzNzA4NDd9.h_yhwhqAlFyfTqjpHXTrDojhY5hwYXal3FIBW9NT9QI
 
 ### Users create (signup)
 POST {{ hostname }}/users
@@ -25,23 +25,23 @@ Content-Type: application/json
 
 ### Users show
 
-GET {{ hostname }}/users/:id
+GET {{ hostname }}/users/me
 Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
 ### Users update
-PATCH {{ hostname }}/users/:id
+PATCH {{ hostname }}/users/me
 Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
 {
-  "hours_away_per_day": 8,
-  "dog_training_experience": "false"
+  "hours_away_per_day": 10
+ 
 }
 
 ### User destroy
 
-DELETE {{ hostname }}/users/:id
+DELETE {{ hostname }}/users/me
 Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
@@ -57,11 +57,11 @@ Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
 {
-  "api_dog_id": "55320928"
+  "api_dog_id": "53380891"
 }
 
 ### Favorites delete
-DELETE {{ hostname }}/favorites/2
+DELETE {{ hostname }}/favorites/18
 Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
