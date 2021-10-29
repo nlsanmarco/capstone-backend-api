@@ -29,7 +29,6 @@ class UsersController < ApplicationController
     user.has_children = params[:has_children] || user.has_children
     user.lives_in_house = params[:lives_in_house] || user.lives_in_house
     user.has_yard = params[:has_yard] || user.has_yard
-    user.previous_dog_owner = params[:previous_dog_owner] || user.previous_dog_owner
     user.dog_training_experience = params[:dog_training_experience] || user.dog_training_experience
     user.hours_away_per_day = params[:hours_away_per_day] || user.hours_away_per_day
     user.preferred_breed = params[:preferred_breed] || user.preferred_breed
