@@ -22,8 +22,8 @@ class UsersController < ApplicationController
 
   def update
     user = current_user
-    user.email = params[:email] || user.email
     user.name = params[:name] || user.name
+    user.email = params[:email] || user.email
     # user.password
     user.has_dogs = params[:has_dogs] || user.has_dogs
     user.has_cats = params[:has_cats] || user.has_cats
