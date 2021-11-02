@@ -61,14 +61,8 @@ class ApplicationController < ActionController::API
 
     if current_user.has_yard == false && current_user.preferred_age == "" || current_user.hours_away_per_day > 8 && current_user.preferred_age == ""
       age = "&age=adult,senior"
-    elsif current_user.preferred_age == "baby"
-      age = "&age=baby"
-    elsif current_user.preferred_age == "young"
-      age = "&age=young"
-    elsif current_user.preferred_age == "adult"
-      age = "&age=adult"
-    elsif current_user.preferred_age == "senior"
-      age = "&age=senior"
+    elsif current_user.preferred_age != ""
+      age = "&age=#{current_user.preferred_age}"
     else
       age = ""
     end
