@@ -1,6 +1,6 @@
 @hostname = http://localhost:3000
 
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzU3MTQzMjh9.blUEcYbYpMD81CtggfNqIDcREb7wj9jSOivg2OjNWbU
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzU5NjIyMzN9.5fBggPnf6Lhd2IGCc7C3HzElfR146wRzeJ3ffQqGjLo
 
 ### Users create (signup)
 POST {{ hostname }}/users
@@ -35,7 +35,14 @@ Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
 {
-  "hours_away_per_day": 10
+  "has_children": "",
+  "has_dogs": "",
+  "has_cats": "",
+  "dog_training_experience": "true",
+  "preferred_breed": "",
+  "preferred_age": "",
+  "preferred_gender": "",
+  "preferred_size": ""
  
 }
 
