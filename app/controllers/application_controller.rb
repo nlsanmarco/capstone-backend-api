@@ -53,14 +53,8 @@ class ApplicationController < ActionController::API
 
     if current_user.lives_in_house == false && current_user.preferred_size == ""
       size = "&size=small,medium"
-    elsif current_user.preferred_size == "small"
-      size = "&size=small"
-    elsif current_user.preferred_size == "medium"
-      size = "&size=medium"
-    elsif current_user.preferred_size == "large"
-      size = "&size=large"
-    elsif current_user.preferred_size == "x-large"
-      size = "&size=xlarge"
+    elsif current_user.preferred_size != ""
+      size = "&size=#{current_user.preferred_size}"
     else
       size = ""
     end
