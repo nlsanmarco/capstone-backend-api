@@ -1,6 +1,6 @@
 @hostname = http://localhost:3000
 
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzU5NjIyMzN9.5fBggPnf6Lhd2IGCc7C3HzElfR146wRzeJ3ffQqGjLo
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzU5NjM4NTV9.8-83MTCne37id0ty3sM6K1w4c2IKX5y1GU9uNeD1oMc
 
 ### Users create (signup)
 POST {{ hostname }}/users
