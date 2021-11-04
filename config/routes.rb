@@ -14,4 +14,6 @@ Rails.application.routes.draw do
 
   get "/api_dogs" => "api_dogs#index"
   get "/api_dogs/:api_dog_id" => "api_dogs#show"
+
+  get "/organizations/:org_id" => "organizations#show"
 end
