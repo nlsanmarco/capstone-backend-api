@@ -6,14 +6,6 @@ class Favorite < ApplicationRecord
 
     if response["animal"]
       return response["animal"]
-      # return {
-      #          name: response["animal"]["name"],
-      #          breed: response["animal"]["breeds"]["primary"],
-      #          age: response["animal"]["age"],
-      #          location: "#{response["animal"]["contact"]["address"]["city"]}, #{response["animal"]["contact"]["address"]["state"]}",
-      #          image_url: response["animal"]["primary_photo_cropped"]["small"],
-      #          status: response["animal"]["status"],
-      #        }
     end
     Favorite.find(id).destroy
     return nil

@@ -1,6 +1,6 @@
 @hostname = http://localhost:3000
 
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzYxMzgxMDF9.WABYaELkqBluVBAAiVj7QRziW9vJFb9y7BD8ZiQPvys
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzYxNDc3OTB9.t-NStUS6KSQxAMwLQBNjiKtq0IMeCeE1Ja7mIX9u_R0
 
 ### Users create (signup)
 POST {{ hostname }}/users
@@ -87,6 +87,6 @@ Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
 ### Organizations Show
-GET {{ hostname }}/organizations/GA953
+GET {{ hostname }}/organizations/TN536
 Content-Type: application/json
 Authorization: Bearer {{jwt}}
