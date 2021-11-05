@@ -69,4 +69,15 @@ class User < ApplicationRecord
 
     return query
   end
+
+  def dog_id_list
+    favorites_list = []
+    index = 0
+    while index < favorites.length
+      favorites_list << favorites[index]["api_dog_id"]
+      index += 1
+    end
+
+    return favorites_list
+  end
 end
