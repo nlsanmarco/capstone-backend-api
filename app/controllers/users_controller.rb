@@ -37,7 +37,7 @@ class UsersController < ApplicationController
     user.preferred_gender = params[:preferred_gender] || user.preferred_gender
     user.preferred_size = params[:preferred_size] || user.preferred_size
     user.special_needs = params[:special_needs] || user.special_needs
-    user.location = params[:location] || user.location
+    # user.location = params[:location] || user.location
     user.save
     if user.save
       render json: user

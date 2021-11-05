@@ -65,7 +65,7 @@ class User < ApplicationRecord
       special_needs = ""
     end
 
-    query = "https://api.petfinder.com/v2/animals?type=Dog" + good_with_dogs + good_with_cats + good_with_children + size + age + house_trained + gender + breed + special_needs + "&location=#{location}"
+    query = "https://api.petfinder.com/v2/animals?type=Dog" + good_with_dogs + good_with_cats + good_with_children + size + age + house_trained + gender + breed + special_needs + "&location=37410"
 
     return query
   end
