@@ -10,14 +10,18 @@ class ApiDogsController < ApplicationController
   def show
     api_dog = HTTP.auth("Bearer #{get_token}").get("https://api.petfinder.com/v2/animals/#{params[:api_dog_id]}").parse(:json)["animal"]
 
-    index = 0
-    while index < current_user.dog_id_list.length
-      if api_dog["id"].to_s == current_user.dog_id_list[index]
-        favorite_dog = true
-        break
-      else
-        index += 1
-        favorite_dog = false
+    if current_user.dog_id_list.length == 0
+      favorite_dog = false
+    else
+      index = 0
+      while index < current_user.dog_id_list.length
+        if api_dog["id"].to_s == current_user.dog_id_list[index]
+          favorite_dog = true
+          break
+        else
+          index += 1
+          favorite_dog = false
+        end
       end
     end
 
